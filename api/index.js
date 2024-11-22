@@ -5,6 +5,7 @@ import authRouter from './routes/auth.route.js';
 import userRouter from './routes/user.route.js';
 const app = express();
 app.use(express.json());
+
 dotenv.config();
 mongoose.connect(process.env.MONGO).then(()=>{
     console.log('Connected to database');
