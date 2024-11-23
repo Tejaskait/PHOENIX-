@@ -86,7 +86,7 @@ export default function CreateListing() {
     }
   return (
     <main className='p-3 max-w-4xl mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-7'>Create a Listing</h1>
+      <h1 className='text-3xl font-semibold text-center my-7'>create a meal</h1>
       <form  onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
           <input
@@ -121,20 +121,20 @@ export default function CreateListing() {
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input type='checkbox' id='sale' className='w-5' onChange={handleChange} checked={formData.type === 'sale' }/>
-              <span>Sell</span>
+              <span>morning</span>
             </div>
             <div className='flex gap-2'>
               <input type='checkbox' id='rent' className='w-5' onChange={handleChange} checked={formData.type === 'rent' } />
-              <span>Rent</span>
+              <span>evening</span>
             </div>
             <div className='flex gap-2'>
               <input type='checkbox' id='parking' className='w-5' onChange={handleChange} checked={formData.parking} />
-              <span>Parking spot</span>
+              <span>snack</span>
             </div>
             <div className='flex gap-2'>
               <input type='checkbox' id='furnished' className='w-5'
               onChange={handleChange} checked={formData.furnished} />
-              <span>Furnished</span>
+              <span>lunch</span>
             </div>
             <div className='flex gap-2'>
               <input type='checkbox' id='offer' className='w-5' 
@@ -210,7 +210,7 @@ export default function CreateListing() {
          
             className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
           >
-            {loading ? 'Creating...' : 'Create listing'}
+            {loading ? 'Creating...' : 'Create meal'}
           </button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
       </form>
