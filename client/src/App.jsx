@@ -11,6 +11,7 @@ import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
 import CreateListing from './pages/CreateListing.jsx';
+import UpdateListing from './pages/UpdateListing.jsx';
 
 
 export default function App() {
@@ -21,9 +22,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route  element={<PrivateRoute />} >
         <Route path='/profile' element={<Profile />} />
+        <Route path="/create-listing" element={<CreateListing />} />
+        <Route path="/update-listing/:listingId" element={<UpdateListing />} />
         </Route>
         <Route path="/aboutus" element={<AboutUs/>} />
-        <Route path="/create-listing" element={<CreateListing />} />
+       
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/sign-in" element={<SignIn />} />
