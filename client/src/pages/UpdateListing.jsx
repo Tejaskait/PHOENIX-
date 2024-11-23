@@ -124,7 +124,7 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='Address'
+            placeholder='ingridients'
             className='border p-3 rounded-lg'
             id='address'
             required
@@ -167,7 +167,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p>Beds</p>
+              <p>quantity</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -180,7 +180,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p>Baths</p>
+              <p>person can eat</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -195,7 +195,7 @@ export default function CreateListing() {
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
-                <span className='text-xs'>($ / month)</span>
+                <span className='text-xs'>(₹)</span>
               </div>
             </div>
             {formData.offer && (
@@ -212,7 +212,7 @@ export default function CreateListing() {
                 />
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(₹)</span>
                 </div>
               </div>
           
