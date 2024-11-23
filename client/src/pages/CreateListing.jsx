@@ -111,7 +111,7 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='ingridients'
+            placeholder='date'
             className='border p-3 rounded-lg'
             id='address'
             required

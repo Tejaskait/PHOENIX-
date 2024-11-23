@@ -14,7 +14,8 @@ import {
   import { MdOutlineProductionQuantityLimits } from "react-icons/md";
   import { FaPeopleGroup } from "react-icons/fa6";
   import { GiKnifeFork } from "react-icons/gi";
-
+  import { useSelector } from 'react-redux';
+  import Contact from '../components/Contact';
 
 
 
@@ -23,6 +24,8 @@ import {
 export default function Listing() {
     const params = useParams();
     const [copied, setCopied] = useState(false);
+    const [contact, setContact] = useState(false);
+    const {currentUser} = useSelector((state) => state.user); 
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -47,7 +50,7 @@ export default function Listing() {
         };
         fetchListing();
       }, [params.listingId]);
-      console.log(loading);
+    
       return <main className='main'>{loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
@@ -119,6 +122,13 @@ export default function Listing() {
                 {listing.furnished ? 'lunch' : 'not lunch'}
               </li>
             </ul>
+            {currentUser && listing.userRef !== currentUser._id && !contact && (
+              <button onClick={()=>setContact(true)} className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3'>
+                Contact landlord
+              </button>
+            )}
+            {contact && <Contact listing={listing}/>}
+
           </div>
         </div>
       )}</main>
