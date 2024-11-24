@@ -18,7 +18,7 @@ export default function About() {
       </h1>
       <h1 className="font-nmregular ">
        
-        With over 500 skilled professionals, we specialize in delivering
+         over 500 skilled professionals, we specialize in delivering
         superior data management, IT product development, and innovation &
         digital transformation services.
       </h1>
