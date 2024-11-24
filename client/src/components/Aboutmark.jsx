@@ -6,7 +6,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 export default function About() {
   return (
-    <div className="w-full py-10 bg-[#cdea68] rounded-t-xl px-10">
+    <div className="w-full py-10 bg-[#fc6d25] rounded-t-xl px-10">
       <h1 className="w-full border-t-[2px] border-[#000000] font-nmregular text-[4vw] leading-[8vw] tracking-tighter">
         The Leaders in Innovation
         <h1 className="font-nmregular text-[2vw] leading-[4vw] tracking-tighter">
