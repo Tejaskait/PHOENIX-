@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 export default function Header() {
     const { currentUser } = useSelector(state => state.user);
   return (
-    <header className="bg-transparent flex w-full px-8 py-4 bg-white shadow-md items-center justify-between">
+    <header className="bg-transparent  flex w-full px-8 py-4 bg-white shadow-md items-center justify-between">
       {/* Logo Section */}
       <div className="flex items-center gap-1">
         <Link to="/">
@@ -12,7 +12,7 @@ export default function Header() {
             src="src/components/phoenix-logo.png"
             alt="Logo"
             style={{ height: "60px", width: "60px" }}
-          /> 
+          />  
         </Link>
         <h1 className="text-3xl sm:inline font-fgsemibold font-bold tracking-wide text-[#F16128] hover:text-black transition-colors duration-300">PHOENIX</h1>
       </div>

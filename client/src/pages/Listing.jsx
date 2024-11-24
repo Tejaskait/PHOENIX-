@@ -51,7 +51,7 @@ export default function Listing() {
         fetchListing();
       }, [params.listingId]);
     
-      return <main className='main'>{loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
+      return <main className='main bg-cover bg-center bg-[url("https://img.freepik.com/free-photo/bread-slices-with-topping-tomato-cheese-olives-white-table_23-2148194999.jpg?semt=ais_hybrid")]'>{loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
       )}
