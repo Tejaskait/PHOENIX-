@@ -14,6 +14,7 @@ import CreateListing from './pages/CreateListing.jsx';
 import UpdateListing from './pages/UpdateListing.jsx';
 import Listing from './pages/Listing.jsx';
 import Search from './pages/Search.jsx';
+import Meals from './pages/Meals.jsx';
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
   <Header /> 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/meals" element={<Meals />} />
 
         <Route  element={<PrivateRoute />} >
         <Route path='/profile' element={<Profile />} />
