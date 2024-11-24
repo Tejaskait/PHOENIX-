@@ -49,14 +49,7 @@ export default function Header() {
       </nav>
 
       {/* Search Section */}
-      <form className=" bg-gray-100 p-1 rounded-lg flex items-center gap-0.1">
-        <input
-          type="text"
-          placeholder="SEARCH"
-          className="bg-transparent   "
-        />
-        <FaSearch className="text-gray-600" />
-      </form>
+      
     </header>
   )
 }
