@@ -9,7 +9,7 @@ export const Homeimage = () => {
           <div className="textstructure  text-white  text-center px-3">
             <div className="masker">
               <h1 className=" text-[6vw] py-40 leading-[.75] tracking-tighter font-nmregular">
-                hiiii ratnaaaaaaa
+                  WE CREATE
               </h1>
             </div>
            
