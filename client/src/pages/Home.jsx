@@ -4,6 +4,9 @@ import Aboutmark from "../components/Aboutmark";
 import Homemark from "../components/Homemark";
 import Tracking from "../components/Tracking";
 import { Homeimage } from "../components/Homeimage";
+import Homefeatured from "../components/Homefeatured";
+import Cards from "../components/Cards";
+import Lasteye from "../components/Lasteye";
 
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
       <Homemark />
       <Aboutmark />
       <Tracking/>
+      <Homefeatured />
+      <Cards/>
+      <Lasteye/>
     </div>
     
   );

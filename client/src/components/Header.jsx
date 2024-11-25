@@ -4,40 +4,41 @@ import { useSelector } from 'react-redux';
 export default function Header() {
     const { currentUser } = useSelector(state => state.user);
   return (
-    <header className="bg-transparent  flex w-full px-8 py-4 bg-white shadow-md items-center justify-between">
+    <header className=" sticky top-0 z-10   backdrop-filter backdrop-blur-lg flex w-full  px-20 py-4  shadow-md items-center bg-opacity-10 justify-between bg-cover ">
+     
       {/* Logo Section */}
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-20">
         <Link to="/">
           <img
-            src="src/components/phoenix-logo.png"
+            src="https://mma.prnewswire.com/media/1654936/Phoenix_Logo.jpg?p=facebook"
             alt="Logo"
             style={{ height: "60px", width: "60px" }}
           />  
         </Link>
-        <h1 className="text-3xl sm:inline font-fgsemibold font-bold tracking-wide text-[#F16128] hover:text-black transition-colors duration-300">PHOENIX</h1>
+        <h1 className="text-6xl  sm:inline font-fgsemibold font-bold tracking-wide text-[#F16128] hover:text-black transition-colors duration-300">PHOENIX</h1>
       </div>
   
       {/* Navigation Section */}
       <nav className='
       '>
         <ul className="flex gap-3 px-10 justify-center items-center text-sm font-nmregular text-gray-700">
-        
-          
-          <Link to="/contactus">
-            <li className="hidden sm:inline hover:underline">CONTACT US</li>
-          </Link>
-          <Link to="/resources">
-            <li className=" hidden sm:inline hover:underline">WELFARE</li>
-          </Link>
-          <Link to="/careers">
-            <li className=" hidden sm:inline hover:underline">CAREERS</li>
-          </Link>
-          <Link to="/ourservices">
-            <li className="hidden sm:inline hover:underline">OUR SERVICES</li>
-          </Link>
-          <Link to="/">
+        <Link to="/">
             <li className="  hover:underline">HOME</li>
           </Link>
+          
+          <Link to="/contactus">
+            <li className="">CONTACT US</li>
+          </Link>
+          <Link to="/resources">
+            <li className=" ">WELFARE</li>
+          </Link>
+          <Link to="/careers">
+            <li className=" ">CAREERS</li>
+          </Link>
+          <Link to="/ourservices">
+            <li className="">OUR SERVICES</li>
+          </Link>
+          
           <Link to="/profile">
           {currentUser ? (
             <img className='rounded-full h-9 w-9 object-cover' src ={currentUser.avatar} alt=""/>

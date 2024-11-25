@@ -61,11 +61,8 @@ export default function About() {
         </div>
         </div>
      
-        <div className="hidden sm:inline w-1/2 h-[70vh] rounded-2xl ">
-          <img
-            src="/src/components/ami.png"
-            style={{ height: "500px", width: "478px" }}
-          ></img>
+        <div className=" w-1/2 h-[70vh]  ">
+          <img className="" src="https://phoenix.tech/wp-content/uploads/2024/10/Group-1321314505.png" alt="" />
           
         
         </div>

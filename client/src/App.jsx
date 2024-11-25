@@ -20,7 +20,7 @@ import Meals from './pages/Meals.jsx';
 export default function App() {
   return <BrowserRouter >
   
-  <Header /> 
+  <Header  /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meals" element={<Meals />} />
