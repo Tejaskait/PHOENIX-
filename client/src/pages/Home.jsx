@@ -11,7 +11,7 @@ import Lasteye from "../components/Lasteye";
 export default function Home() {
   return (
     <div className="w-full h-screen  pt-1">
-      <Homeimage/>
+     <Homeimage/>
       
       <div className="mt-15 "></div>
       

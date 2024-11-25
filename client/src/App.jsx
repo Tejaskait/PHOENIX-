@@ -15,9 +15,14 @@ import UpdateListing from './pages/UpdateListing.jsx';
 import Listing from './pages/Listing.jsx';
 import Search from './pages/Search.jsx';
 import Meals from './pages/Meals.jsx';
+import LocomotiveScroll from 'locomotive-scroll';
+
+
+
 
 
 export default function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return <BrowserRouter >
   
   <Header  /> 

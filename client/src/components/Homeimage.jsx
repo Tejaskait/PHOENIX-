@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { GiEvilWings } from "react-icons/gi";
 export const Homeimage = () => {
+  motion
   return (
-    <div className='relative w-full h-full bg-cover bg-center bg-[url("https://media.architecturaldigest.com/photos/6605a4051d1f674f792b36e9/master/w_1600%2Cc_limit/girlboss-office-sophia-amoruso-1469_copy.jpg")]'>
+    <div data-scroll data-scroll-speed="-.3" className='relative w-full h-full bg-cover bg-center bg-[url("https://media.architecturaldigest.com/photos/6605a4051d1f674f792b36e9/master/w_1600%2Cc_limit/girlboss-office-sophia-amoruso-1469_copy.jpg")]'>
       <div>
         <div>
           <div className="  "></div>
