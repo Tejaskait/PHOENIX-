@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function Cards() {
     
   return (
-    <div className="w-full h-screen bg-zinc-100 flex items-center px-32 gap-5">
+    <div data-scroll  className="w-full h-screen bg-zinc-100 flex items-center px-32 gap-5">
       <motion.div initial={{ height: 0}} animate={{ height: "50vh"}} transition={{ease: [0.76, 0, 0.24, 1] ,duration: 1}}  className="cardcontainer  h-[50vh] w-1/2">
         <div className="card relative rounded-xl flex justify-center items-center  w-full h-full bg-[#004D43]">
             <j1 className="font-nmregular  self-center text-[#CDEA68] text-6xl">PHOENIX</j1>

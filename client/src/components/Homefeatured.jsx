@@ -11,7 +11,7 @@ cards[index].start({y: "0"});
     cards[index].start({y: "100"});
       }
   return (
-    <div className=' w-full  py-20 bg-cover bg-center bg-[url("https://e0.pxfuel.com/wallpapers/447/980/desktop-wallpaper-white-grid-white-grid-aesthetic.jpg")]'>
+    <div data-scroll-section data-scroll className=' w-full  py-20 bg-cover bg-center bg-[url("https://e0.pxfuel.com/wallpapers/447/980/desktop-wallpaper-white-grid-white-grid-aesthetic.jpg")]'>
       <div className="w-full px-20 ">
         <h1 className="text-[6vw] py-10 font-nmregular tracking-tighter">
           Employee Welfare :-

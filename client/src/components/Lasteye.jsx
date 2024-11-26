@@ -15,7 +15,7 @@ export default function Lasteye() {
     });
   });
   return (
-    <div className="tracker w-full  overflow-hidden ">
+    <div  className="tracker w-full  overflow-hidden ">
       <div className="relative font-fgsemibold leading-none py-20    w-full h-full bg-[#CDEA68]">
         <div className="uppercase text-[8vw] justify-center items-center flex">
           <h1>create</h1>
