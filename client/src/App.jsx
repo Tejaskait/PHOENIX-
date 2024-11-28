@@ -8,7 +8,7 @@ import Careers from './pages/Careers';
 import Profile from './pages/Profile';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-import Header from './components/Header';
+
 import PrivateRoute from './components/PrivateRoute';
 import CreateListing from './pages/CreateListing.jsx';
 import UpdateListing from './pages/UpdateListing.jsx';
@@ -25,7 +25,7 @@ export default function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return <BrowserRouter >
   
-  <Header  /> 
+ 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meals" element={<Meals />} />
