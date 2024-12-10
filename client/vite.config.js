@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import glsl from 'vite-plugin-glsl'; // No need for glslify
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   server: {
     proxy: {
@@ -11,6 +12,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
-})
-  
+  plugins: [react(), glsl()], // Just use glsl plugin
+});

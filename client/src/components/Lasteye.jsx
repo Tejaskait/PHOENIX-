@@ -44,8 +44,8 @@ export default function Lasteye() {
             <div className="h-2 w-2 bg-zinc-100 rounded-full"></div>
           </button>
         </div>
-        <div className="absolute flex gap-10 top-1/2 left-1/2  -translate-x-[50%] -translate-y-[50%]  ">
-          <div className="w-[10vw] h-[10vw] rounded-full bg-zinc-100 flex items-center justify-center">
+        <div  className="absolute flex gap-10 top-1/2 left-1/2  -translate-x-[50%] -translate-y-[50%]  ">
+          <div data-scroll data-scroll-section data-scroll-speed="-.3" className="w-[10vw] h-[10vw] rounded-full bg-zinc-100 flex items-center justify-center">
             <div className="w-2/3 h-2/3  relative items-center justify-center rounded-full bg-zinc-900">
               <div
                 style={{
@@ -57,7 +57,7 @@ export default function Lasteye() {
               </div>
             </div>
           </div>
-          <div className="w-[10vw] h-[10vw] rounded-full bg-zinc-100 flex items-center justify-center">
+          <div data-scroll data-scroll-section data-scroll-speed="-.3" className="w-[10vw] h-[10vw] rounded-full bg-zinc-100 flex items-center justify-center">
             <div className="w-2/3 h-2/3  relative items-center justify-center rounded-full bg-zinc-900">
               <div
                 style={{

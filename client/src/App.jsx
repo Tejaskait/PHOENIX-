@@ -16,6 +16,7 @@ import Listing from './pages/Listing.jsx';
 import Search from './pages/Search.jsx';
 import Meals from './pages/Meals.jsx';
 import LocomotiveScroll from 'locomotive-scroll';
+import Dispthreenav from './pages/Dispthreenav.jsx';
 
 
 
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/update-listing/:listingId" element={<UpdateListing />} />
         </Route>
 
+            <Route path="/threenav" element={<Dispthreenav />} />
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route path="/search" element={<Search />} />
         <Route path="/aboutus" element={<AboutUs/>} />
@@ -47,5 +49,6 @@ export default function App() {
         <Route path="/ourservices" element={<OurServices />} />
         <Route path="/careers" element={<Careers />} />
       </Routes>
+      
     </BrowserRouter>;
-}
+}                 
