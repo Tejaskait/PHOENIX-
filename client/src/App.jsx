@@ -17,6 +17,7 @@ import Search from './pages/Search.jsx';
 import Meals from './pages/Meals.jsx';
 import LocomotiveScroll from 'locomotive-scroll';
 import Dispthreenav from './pages/Dispthreenav.jsx';
+import Tracking from './pages/Tracking.jsx';
 
 
 
@@ -41,7 +42,7 @@ export default function App() {
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route path="/search" element={<Search />} />
         <Route path="/aboutus" element={<AboutUs/>} />
-       
+        <Route path="/tracking" element={<Tracking />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/sign-in" element={<SignIn />} />

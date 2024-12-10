@@ -3,7 +3,7 @@ import Threenavnav from "../components/Threenavnav";
 import * as THREE from "three";
 import vertex from "./Shaders/Vertex.glsl?raw";
 import fragment from "./Shaders/Fragment.glsl?raw";
-import gsap from 'gsap';
+import gsap from "gsap";
 
 export default function Dispthreenav() {
   class Site {
@@ -25,8 +25,8 @@ export default function Dispthreenav() {
         100,
         2000
       );
-      this.camera.position.z = 500; // Adjusted to 500 for better view
-      this.camera.fov = 2 * Math.atan(this.height / 2 / 500) * (180 / Math.PI); // Adjusted FOV
+      this.camera.position.z = 500;
+      this.camera.fov = 2 * Math.atan(this.height / 2 / 500) * (180 / Math.PI);
       this.renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
@@ -37,10 +37,9 @@ export default function Dispthreenav() {
       // Append to DOM
       if (this.container) {
         this.container.appendChild(this.renderer.domElement);
-      } else {
-        console.error("Container not found!");
       }
-this.hoverOverLinks();
+
+      this.hoverOverLinks();
       this.addImages();
 
       this.resize();
@@ -49,8 +48,8 @@ this.hoverOverLinks();
     }
 
     resize() {
-      this.width = this.container.offsetWidth; // Fixed typo: 'offWidth' -> 'offsetWidth'
-      this.height = this.container.offsetHeight; // Fixed typo: 'offHeight' -> 'offsetHeight'
+      this.width = this.container.offsetWidth;
+      this.height = this.container.offsetHeight;
       this.renderer.setSize(this.width, this.height);
       this.camera.aspect = this.width / this.height;
       this.camera.updateProjectionMatrix();
@@ -78,20 +77,13 @@ this.hoverOverLinks();
         return new Promise((resolve, reject) => {
           const texture = textureLoader.load(
             img.src,
-            () => {
-              console.log(`Loaded ${img.src}`);
-              resolve(texture);
-            },
+            () => resolve(texture),
             undefined,
-            (error) => {
-              console.error(`Failed to load ${img.src}`, error);
-              reject(error);
-            }
+            (error) => reject(error)
           );
         });
       });
 
-      // After all textures are loaded, create meshes
       Promise.all(textures)
         .then((loadedTextures) => {
           const uniforms = {
@@ -109,28 +101,20 @@ this.hoverOverLinks();
             uniforms: uniforms,
             vertexShader: vertex,
             fragmentShader: fragment,
-            transparent: true, // Transparency enabled
+            transparent: true,
           });
-
-          console.log("Material initialized:", this.material);
 
           this.images.forEach((img, index) => {
             const bounds = img.getBoundingClientRect();
-            console.log(
-              `Creating mesh for ${img.src}`,
-              bounds.width,
-              bounds.height
-            );
             const geometry = new THREE.PlaneGeometry(
               bounds.width,
               bounds.height
             );
             const mesh = new THREE.Mesh(geometry, this.material);
-            mesh.material.map = loadedTextures[index]; // Apply loaded texture
-            mesh.scale.set(1, 1, 1); // Ensure meshes are scaled to visible size
+            mesh.material.map = loadedTextures[index];
+            mesh.scale.set(1, 1, 1);
             this.scene.add(mesh);
 
-            // Store mesh details
             this.imageStore.push({
               img: img,
               mesh: mesh,
@@ -141,9 +125,7 @@ this.hoverOverLinks();
             });
           });
 
-          this.setPosition(); // Set positions once all images are added
-
-          // Start the render loop once everything is ready
+          this.setPosition();
           this.startRenderLoop();
         })
         .catch((error) => {
@@ -152,7 +134,7 @@ this.hoverOverLinks();
     }
 
     startRenderLoop() {
-      this.render(); // Start the render loop only after material is initialized
+      this.render();
     }
 
     hoverOverLinks() {
@@ -161,13 +143,11 @@ this.hoverOverLinks();
         link.addEventListener("mouseover", () => {
           this.material.uniforms.uTimeline.value = 0.0;
           gsap.killTweensOf(this.material.uniforms.uTimeline);
-    
-          // Update the shader uniforms directly
+
           this.uEndIndex = i;
-          this.material.uniforms.uStartIndex.value = this.uEndIndex; // Ensure it starts from the hovered image
-          this.material.uniforms.uEndIndex.value = this.uEndIndex;   // Keep the end index the same
-    
-          // Animate timeline for smooth transition
+          this.material.uniforms.uStartIndex.value = this.uEndIndex;
+          this.material.uniforms.uEndIndex.value = this.uEndIndex;
+
           gsap.to(this.material.uniforms.uTimeline, {
             value: 4.0,
             duration: 2,
@@ -175,16 +155,12 @@ this.hoverOverLinks();
         });
       });
     }
-    
 
     render() {
       this.time += 0.1;
 
-      // Check if this.material is defined before updating the uniforms
       if (this.material && this.material.uniforms) {
-        this.material.uniforms.uTime.value = this.time; // Update time uniform
-      } else {
-        console.error("Material or uniforms are not defined");
+        this.material.uniforms.uTime.value = this.time;
       }
 
       this.renderer.render(this.scene, this.camera);
@@ -198,8 +174,6 @@ this.hoverOverLinks();
       new Site({
         dom: canvasElement,
       });
-    } else {
-      console.error("Canvas element not found!");
     }
   }, []);
 
