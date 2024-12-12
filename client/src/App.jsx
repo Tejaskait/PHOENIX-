@@ -18,6 +18,7 @@ import Meals from './pages/Meals.jsx';
 import LocomotiveScroll from 'locomotive-scroll';
 import Dispthreenav from './pages/Dispthreenav.jsx';
 import Tracking from './pages/Tracking.jsx';
+import Spotify from './pages/Spotify.jsx';
 
 
 
@@ -37,7 +38,7 @@ export default function App() {
         <Route path="/create-listing" element={<CreateListing />} />
         <Route path="/update-listing/:listingId" element={<UpdateListing />} />
         </Route>
-
+        <Route path="/spotify" element={<Spotify />} />
             <Route path="/threenav" element={<Dispthreenav />} />
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route path="/search" element={<Search />} />
