@@ -1,5 +1,5 @@
 import express from 'express';
-import { getPlaylists } from '../controllers/spotify.controller.js';
+import { getPlaylists } from '../controllers/music.controller.js';
 
 const router = express.Router();
 

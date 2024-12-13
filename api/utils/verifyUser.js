@@ -9,3 +9,21 @@ export const verifyToken = (req, res, next) => {
     next();
   });
 };
+
+export const verifyAdmin = (req, res, next) => {
+  try {
+    if (!req.user) {
+      return next(errorHandler(401, 'Unauthorized'));
+    }
+
+    const isAdmin = req.user.email === process.env.ADMIN_EMAIL;
+    if (!isAdmin) {
+      return next(errorHandler(403, 'Access restricted to admins only.'));
+    }
+
+    next(); // User is an admin, proceed
+  } catch (error) {
+    next(errorHandler(500, 'Server error occurred during admin verification.'));
+  }
+};
+

@@ -119,6 +119,25 @@ export default function Profile() {
           console.log(error.message);
         }
       };
+      const fetchAllUsers = async () => {
+        try {
+          const res = await fetch('/api/user/', {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`, // Include token
+            },
+          });
+          const data = await res.json();
+          if (res.ok) {
+            setUsers(data); // Update state with user list
+          } else {
+            console.error(data.message);
+          }
+        } catch (error) {
+          console.error('Error fetching users:', error);
+        }
+      };
+      
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
@@ -150,6 +169,7 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
+      
       <button onClick={handleShowListings}  className='text-green-700 w-full'>
         Show Listings
       </button>

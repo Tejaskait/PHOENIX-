@@ -1,16 +1,22 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import glsl from 'vite-plugin-glsl'; // No need for glslify
+import glsl from 'vite-plugin-glsl';
+import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   server: {
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
+        changeOrigin: true,
         secure: false,
       },
     },
   },
-  plugins: [react(), glsl()], // Just use glsl plugin
+  plugins: [react(), glsl()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });

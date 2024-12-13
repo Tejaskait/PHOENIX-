@@ -6,8 +6,13 @@ import authRouter from './routes/auth.route.js';
 import userRouter from './routes/user.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
+import fileUpload from 'express-fileupload';
 import path from 'path';
-import spotifyRouter from './routes/spotify.route.js';
+import musicRouter from './routes/music.route.js';
+import songRouter from './routes/song.route.js';
+import adminRouter from './routes/admin.route.js';
+import albumRouter from './routes/album.route.js';
+import statsRouter from './routes/stats.route.js';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
@@ -46,7 +51,14 @@ app.use(cookieParser());
 
 // Environment Configuration
 dotenv.config();
-
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: path.join(__dirname, 'uploads'),
+  createParentPath: true,
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB
+  },
+}));
 // Database Connection
 mongoose
   .connect(process.env.MONGO)
@@ -61,7 +73,11 @@ mongoose
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
-app.use('/api/spotify', spotifyRouter);
+app.use('/api/music', musicRouter);
+app.use('/api/admin', adminRouter);
+app.use('/api/songs', songRouter);
+app.use('/api/albums',albumRouter);
+app.use('/api/stats', statsRouter);
 
 // Route for handling Spotify callback and getting the access token
 app.get('/callback', async (req, res) => {
